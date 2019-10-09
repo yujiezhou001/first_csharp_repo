@@ -1,8 +1,15 @@
-﻿using System;
+using System;
 using NonPrimitives.Math;
 
 namespace NonPrimitives
 {
+    public enum ShippingMethod
+    {
+        RegularAirMail = 1,
+        RegisteredAirMail = 2,
+        Express = 3
+    }
+
     class MainClass
     {
         public static void Main(string[] args)
@@ -37,6 +44,23 @@ namespace NonPrimitives
             var formattedNames = string.Join(",", names);
             Console.WriteLine(String.Format("My name is {0} {1}", firstname, lastname));
             Console.WriteLine(formattedNames);
+
+            //enums
+            //this is still in type enum
+            var method = ShippingMethod.Express;
+            //casting to integer
+            Console.WriteLine((int)method);
+            var methodId = 3;
+            //casting back to enum
+            Console.WriteLine((ShippingMethod)methodId);
+            //convert enum to string
+            //Console.WriteLine will still convert method to a string if not using ToString() method
+            Console.WriteLine(method.ToString());
+            //convert string to enum
+            var methodName = "Express";
+            //return type is object, so need to cast it into enum(ShippingMethod)
+            var shippingMethod = (ShippingMethod)Enum.Parse(typeof(ShippingMethod), methodName);
+            Console.WriteLine(shippingMethod);
         }
     }
 }
