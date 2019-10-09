@@ -1,67 +1,42 @@
 ﻿using System;
+using NonPrimitives.Math;
 
-namespace HelloWorld
+namespace NonPrimitives
 {
     class MainClass
     {
         public static void Main(string[] args)
         {
+            Person john = new Person();
+            john.FirstName = "John";
+            john.LastName = "Smith";
+            john.introduce();
+            Calculator calculator = new Calculator();
+            var result = calculator.Add(10, 20);
+            Console.WriteLine(result);
 
-            //Primitive Types
-            const float number = 1.0f;
-            int output = (int)number;
-            Console.WriteLine(output);
-            try
-            {
-                string str = "true";
-                bool b = Convert.ToBoolean(str);
-                Console.WriteLine(b);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("The string could not be converted to a boolean");
-            }
-            try
-            {
-                string p = "1234";
-                byte p1 = Convert.ToByte(p);
-                Console.WriteLine(p1);
-                
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("The number could not be converted to a byte");
-            }
+            int[] array = new int[3];
+            array[0] = 1;
+            Console.WriteLine(array[0]);
+            Console.WriteLine(array[1]);
+            Console.WriteLine(array[2]);
 
+            bool[] array2 = new bool[2];
+            array2[0] = true;
+            Console.WriteLine(array2[0]);
+            Console.WriteLine(array2[1]);
 
+            var array3 = new int[2] { 1, 2 };
+            Console.WriteLine(array3[1]);
 
-
-            //int i = 1000;
-            //byte b = (byte)i;
-            //string s = "1";
-            //int s1 = 1;
-            //int output1 = Convert.ToInt32(s);
-            //int output2 = int.Parse(s);
-            //char output3 = (char)s1;
-            //Console.WriteLine(output1);
-            //Console.WriteLine("parse imcompatible types {0}", output2);
-            //Console.WriteLine(output3);
-            //Console.WriteLine(b);
-
-            //Operators
-            //Arithmetic Operators
-            var firstnum = 10;
-            var secondnum = 3;
-            Console.WriteLine((float)firstnum / (float)secondnum);
-            //Comparison Operators
-            var num1 = 10;
-            var num2 = 3;
-            var num3 = 11;
-            Console.WriteLine(num2 == num1 || num3 > num1); //True
-            Console.WriteLine(num1 == num2); //Flase
-            Console.WriteLine(num1 > num2); //True
-            Console.WriteLine(num1 != num2); //True
-            Console.WriteLine(num3 > num1 && num3 > num2); //True
+            //string format
+            string firstname = "Yujie";
+            string lastname = "Zhou";
+            //string[] names = new string[3] { "Yujie", "John", "Mary" };
+            string[] names = { "Yujie", "John", "Mary" };
+            var formattedNames = string.Join(",", names);
+            Console.WriteLine(String.Format("My name is {0} {1}", firstname, lastname));
+            Console.WriteLine(formattedNames);
         }
     }
 }
