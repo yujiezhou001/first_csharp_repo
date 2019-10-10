@@ -61,6 +61,27 @@ namespace NonPrimitives
             //return type is object, so need to cast it into enum(ShippingMethod)
             var shippingMethod = (ShippingMethod)Enum.Parse(typeof(ShippingMethod), methodName);
             Console.WriteLine(shippingMethod);
+
+            //reference types vs value types
+            //value type
+            var number = 1;
+            Increment(number);
+            Console.WriteLine(number); //1
+            //reference type
+            var person = new Person() { Age = 10 };
+            MakeOld(person);
+            Console.WriteLine(person.Age); //20
+
+        }
+
+        public static void Increment(int number)
+        {
+            number += 10;
+        }
+
+        public static void MakeOld(Person person)
+        {
+            person.Age += 10;
         }
     }
 }
