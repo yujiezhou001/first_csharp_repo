@@ -59,7 +59,22 @@ namespace Iteration
                 break;//this will make the game occur only once if we don't have continue
             }
 
+            //create random password
+            var random = new Random();
 
+            const int passwordLength = 10;
+
+            char[] buffer = new char[passwordLength];
+            
+
+            for (var i = 0; i < passwordLength; i++)
+            {
+                buffer[i] = (char)('a' + random.Next(0, 26));
+            }
+
+            //convert array to string
+            var password = new string(buffer);
+            Console.WriteLine(password);
         }
     }
 }
