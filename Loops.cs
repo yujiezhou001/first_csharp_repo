@@ -106,6 +106,33 @@ namespace Iteration
             int max = nums.Max();
             int min = nums.Min();
             Console.WriteLine("Here's your maximum number:" + max);
+
+            //calculate number of divisible numbers
+            int count = 0;
+            for (var i = 1; i <= 100; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine("There are {0} numbers between 1 and 100 that can be divisible by 3", count);
+
+            //calculate sum through a small user prompt program
+            int sum = 0;
+            while (true)
+            {
+                Console.Write("Enter a number (or 'ok' to exit): ");
+                var input4 = Console.ReadLine();
+                if (input4.ToLower() == "ok")
+                {
+                    break;
+                }
+                var number = Convert.ToInt32(input4);
+                sum += number;
+                Console.WriteLine("Your current sum: " + sum);
+            }
         }
     }
 }
+
