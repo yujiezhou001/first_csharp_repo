@@ -54,7 +54,7 @@ namespace Lists
             //Clear()
             Console.WriteLine("Effects of Clear(): ");
             numbers.Clear();
-            Console.WriteLine("Number of elements in the list: " + numbers.Count);
+            Console.WriteLine("Number of elements in the list after clear: " + numbers.Count);
 
         }
     }
