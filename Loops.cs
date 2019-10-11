@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace Iteration
 {
@@ -71,10 +72,40 @@ namespace Iteration
             {
                 buffer[i] = (char)('a' + random.Next(0, 26));
             }
-
             //convert array to string
             var password = new string(buffer);
             Console.WriteLine(password);
+
+            //calculate factorial
+            Console.Write("Please enter a number: ");
+            var input2 = Console.ReadLine();
+            var number1 = Convert.ToInt32(input2);
+            var factorial = 1;
+            for (var i = 1; i <= number1; i++)
+            {
+                factorial *= i;
+            }
+            Console.WriteLine("Here's your factorial:" + factorial);
+
+            //find max or min number from user input
+            Console.Write("Please enter a series of number: ");
+            var input3 = Console.ReadLine();
+            //first approach
+            //string[] nums = input3.Split(',');
+            //var max = Convert.ToInt32(nums[0]);
+            //for (var i = 0; i < nums.Length; i++)
+            //{
+            //    if (max < Convert.ToInt32(nums[i]))
+            //    {
+            //        max = Convert.ToInt32(nums[i]);
+            //    }
+            //}
+            //Console.WriteLine(max);
+            //second approach
+            int[] nums = Array.ConvertAll(input3.Split(','), int.Parse);
+            int max = nums.Max();
+            int min = nums.Min();
+            Console.WriteLine("Here's your maximum number:" + max);
         }
     }
 }
