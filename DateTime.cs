@@ -1,6 +1,6 @@
 using System;
 
-namespace DateTime
+namespace dateTime
 {
     class MainClass
     {
