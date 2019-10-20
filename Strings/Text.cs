@@ -10,6 +10,8 @@ namespace stringBuilder
             // string builder doesn't have string search method
             var builder = new StringBuilder("Hello World");
             // since Append, Replace, Remove and Insert return stringbuilder, can chain them
+            // if want to use string search method, need to convert builder into string first
+            // for example:  builder.ToString().IndexOf('W').
             builder
                 .Append('-', 10)
                 .AppendLine()
