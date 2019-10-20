@@ -10,6 +10,8 @@ namespace ProceduralProgramming
             var name = Console.ReadLine();
             var reversed = ReverseName(name);
             Console.WriteLine("Reversed name: " + reversed);
+
+            UniqueNumber.Unique();
         }
 
         public static string ReverseName(string name)
